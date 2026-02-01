@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarah Dorothy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button id="themeToggle">🌙</button>
+</nav>
+
+<section class="hero show" id="about" style="background-image: url(cutep.gif); max-width: 75%;">
+  <img src="me.gif" alt="Sarah">
+  <h1 class="outlined-text">Sarah Dorothy A. Concon</h1>
+  <p class=" typing text-box">Artist • Computer Engineering Student • Certified Lovergirl</p>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+
+<div class="skill" style="margin-top: 10px; border-bottom: 10px;">Art
+  <div class="bar"><span data-level="75%"></span></div>
+</div>
+
+<div class="skill" style="margin-top: 10px; border-bottom: 10px;">Love for Food
+  <div class="bar"><span data-level="99%"></span></div>
+</div>
+
+<div class="skill" style="margin-top: 10px; border-bottom: 10px;">Programming
+  <div class="bar"><span data-level="50%"></span></div>
+</div>
+</section>
+
+<section id="gallery">
+<h2>Gallery</h2>
+
+<div class="gallery-controls">
+  <button onclick="filterArt('all')">All</button>
+  <button onclick="filterArt('art')">Art</button>
+  <button onclick="filterArt('me')">Me</button>
+  <button onclick="filterArt('friends&family')">Friends & Family</button>
+</div>
+
+<div class="gallery">
+  <img src="1000068043.jpg" data-type="art">
+  <img src="1000068078.jpg" data-type="art">
+  <img src="1000068067.jpg" data-type="art">
+  <img src="Untitled98_20250708191817.png" data-type="me">
+  <img src="FB_IMG_1730045492582.jpg" data-type="me">
+  <img src="IMG_20250524_204901.jpg" data-type="me">
+  <img src="FB_IMG_1740500516946.jpg" data-type="me">
+  <img src="IMG_20250516_231745.jpg" data-type="me">
+  <img src="477337c862244cfc0839a662d2c2b306_0.jpeg" data-type="me">
+  <img src="Untitled98_20250708192056.png" data-type="me">
+  <img src="FB_IMG_1728477910008.jpg" data-type="me">
+  <img src="FB_IMG_1728477933442.jpg" data-type="me">
+</div>
+
+<img src="roll.gif" alt="roll" style="width: 100px; display: block; margin: 20px auto;">
+
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<p style="text-align:center;">
+Bachelor of Science in Computer Engineering<br>
+University of Bohol<br>
+<em>2025 – Present</em>
+</p>
+<details style="text-align: center;"><summary>Why University of Bohol?</summary>
+Just becuz cuh.</details>
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact Me</h2>
+<p>
+<a href="https://www.instagram.com/s.r.h_mi/" target="_blank">Instagram</a> •
+<a href="https://www.facebook.com/share/1G5APf2tKc/" target="_blank">Facebook</a>
+</p>
+</section>
+
+<footer>
+Made with 💖 by Sarah Dorothy
+</footer>
+
+<div class="modal" id="modal">
+  <img>
+</div>
+
+  <audio autoplay loop>
+        <source src="Princess Bubblegum (Remix) - assemblage (youtube).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+  </audio>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+:root{
+  --bg:url('pic.jpg');
+  --card:#ffffff;
+  --text:#e81496;
+  --pink:#ff3399;
+  --border:2px solid #e81496;
+}
+
+body.dark{
+  --bg:url('drkp.jpg');
+  --card:#2a1624;
+  --text:#f7d6e8;
+  --pink:#ff6fb7;
+  --border:2px solid #f7d6e8;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:"Courier New", cursive;
+  background:var(--bg);
+  background-repeat:repeat;
+  background-attachment:scroll;
+  background-size:auto;
+  color:var(--text);
+  transition:.4s;
+  scroll-behavior:smooth;
+}
+
+body.dark{
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size:cover;
+  background-position:center;
+}
+
+.outlined-text {
+  color: #fff;                  
+  -webkit-text-stroke: 3px #d0096d; 
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  text-shadow: 0 5px 15px rgba(255, 42, 148, 0.526); 
+
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.text-box {
+  background-color: #fff;
+  color: #ff3399;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(255,51,153,0.3); 
+  text-align: center;
+  font-weight: bold;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:var(--card);
+  padding:12px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--pink);
+  font-weight:bold;
+  margin:0 10px;
+  position:relative;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0;
+  height:2px;
+  background:var(--pink);
+  transition:.3s;
+}
+
+nav a:hover::after{ width:100%; }
+
+button{ transition:.3s; }
+button:hover{ transform:translateY(-2px) scale(1.05); }
+
+#themeToggle{
+  background:#ffe1f0;
+  border:none;
+  padding:6px 12px;
+  border-radius:12px;
+  cursor:pointer;
+  font-family:inherit;
+}
+
+section{
+  background:var(--card);
+  border:var(--border);
+  max-width:900px;
+  margin:50px auto;
+  padding:30px 25px;
+  background:var(--card);
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(0,0,0,.1);
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .8s ease, transform .6s cubic-bezier(.19,1,.22,1);
+}
+
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+h1,h2{ color:var(--pink); text-align:center; margin-bottom:20px; }
+
+.hero img{
+  width:180px;
+  border-radius:50%;
+  border:4px dotted var(--pink);
+  display:block;
+  margin:0 auto 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+}
+.bar span{
+  display:block;
+  height:12px;
+  width:0; 
+  border-radius: 10px;
+  border-style: dotted;
+  background:var(--pink);
+  transition: width 1.2s ease;
+}
+
+
+.gallery-controls{ text-align:center; margin-bottom:20px; }
+.gallery-controls button{
+  background:#ffe1f0;
+  border:none;
+  padding:8px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  margin:0 5px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  grid-auto-rows:10px;
+  gap:10px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:15px;
+  cursor:pointer;
+  border:2px dashed var(--pink);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover{
+  transform: scale(1.05);
+  box-shadow:0 8px 15px rgba(255,51,153,0.25);
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+
+.modal img{
+  max-width:70%;
+  max-height:80%;
+  border-radius:20px;
+  transform:scale(.8);
+  animation:zoomIn .4s forwards;
+}
+
+@keyframes zoomIn{ to{transform:scale(1);} }
+
+.modal.show{ display:flex; }
+
+.contact{text-align:center;}
+.contact a{ color:var(--pink); text-decoration:none; font-weight:bold; margin:0 10px; }
+
+footer{ text-align:center; padding:20px; color:#fff; }
+
+.sparkle{
+  position:fixed;
+  width:8px;
+  height:8px;
+  pointer-events:none;
+  border-radius:50%;
+  background:radial-gradient(circle, #fff, var(--pink));
+  animation:sparkleFade 1s linear forwards;
+}
+
+@keyframes sparkleFade{
+  0%{opacity:1; transform:scale(1) translateY(0);}
+  100%{opacity:0; transform:scale(0) translateY(-20px);}
+}
+
+.typing {
+  display: content-box;
+  border-right: 2px solid var(--pink);
+  border-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 1.1rem;
+  animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 49% { border-color: var(--pink); }
+  50%, 100% { border-color: transparent; }
+}
+
